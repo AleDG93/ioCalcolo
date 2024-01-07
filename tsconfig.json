@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src", // Set the base directory for module resolution
+    "target": "ES6",
+    "paths": {
+      "@/*": [
+        "*"
+      ] // Allow any file under the "src" directory to be resolved
+    },
+    "useDefineForClassFields": true,
+    "module": "CommonJS",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    /* Linting */
+    "strict": true,
+    "types": [
+      "node",
+      "vue",
+      "vite/client",
+      "unplugin-vue-components/vite",
+      "unplugin-auto-import/vite"
+    ],
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "dist"
+  ],
+}
