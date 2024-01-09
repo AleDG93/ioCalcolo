@@ -1,6 +1,6 @@
 
 <template>
-    <div class="surface-section mx-4 md:mt-4">
+    <div class="mx-4 md:mt-4">
         <Header />
             <router-view></router-view>
     </div>

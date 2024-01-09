@@ -2,84 +2,59 @@
 
 <script setup lang="ts">
 
-import Button from 'primevue/button';
 import InputNumber from 'primevue/inputnumber';
 import Card from 'primevue/card';
 
 const valueA = ref(0);
-const valueB = ref(0);
+const valueB = ref(100);
 const valueC = ref(0);
 const valueX = ref(0);
-const result = ref("");
 
 const calculateProportion = () => {
-  if (valueA.value && valueB.value && valueC.value) {
-    result.value = ((valueA.value * valueC.value) / valueB.value).toFixed(2);
-  } else if (valueA && valueB.value && valueC.value && valueX.value) {
-    result.value = ((valueB.value * valueX.value) / valueA.value).toFixed(2);
-  } else {
-    result.value = "";
+  if (valueA.value && valueC.value) {
+    valueX.value = Math.floor(((valueA.value * valueC.value) / valueB.value));
   }
 };
-</script><template>
-    <div class="p-d-flex p-jc-center p-ai-center p-h-100">
+
+watch([valueA, valueC], calculateProportion)
+</script>
+<template>
       <Card class="p-card p-shadow-5">
         <template #title>
             Arithmetic Proportions Calculator
-
-            
+            <WidgetHeart widget="proportion"/>
         </template>
         <template #subtitle>
-            
             Enter three values and leave the fourth empty to calculate the unknown proportion (X).
         </template>
         <template #content>
-
-  
-        <!-- Input Fields -->
-        <div class="p-grid p-justify-center p-mb-3">
-          <div class="p-col">
-            <label for="valueA">Value A:</label>
-            <InputNumber v-model="valueA" id="valueA" class="p-inputtext" />
-          </div>
-          <div class="p-col">
-            <label for="valueB">Value B:</label>
-            <InputNumber v-model="valueB" id="valueB" class="p-inputtext" />
-          </div>
-          <div class="p-col">
-            <label for="valueC">Value C:</label>
-            <InputNumber v-model="valueC" id="valueC" class="p-inputtext" />
-          </div>
-          <div class="p-col">
-            <label for="valueX">Unknown (X):</label>
-            <InputNumber v-model="valueX" id="valueX" class="p-inputtext" />
-          </div>
-        </div>
-  
-        <!-- Calculate Button -->
-        <div class="p-text-center p-mb-3">
-          <Button label="Calculate" @click="calculateProportion" />
-        </div>
-  
-        <!-- Result -->
-        <div class="p-text-center p-mb-3">
-          <div v-if="result !== null">
-            <p class="p-text-bold">The unknown (X) is: {{ result }}</p>
-          </div>
-        </div>
-  
-        <!-- Explanation Card -->
-        <Card>
           <h4 class="p-mb-3">Explanation:</h4>
           <p>
             In arithmetic proportions, the product of the means (ad) is equal to the product of the extremes (bc).
             This calculator helps you find the unknown proportion (X) based on three known values.
           </p>
-        </Card>
+          <div class="flex flex-wrap gap-2 p-fluid">
+            <div class="flex-auto">
+                <label for="integeronly" class="font-bold block mb-2"> If value A is </label>
+                <InputNumber v-model="valueA" @input="calculateProportion"/>
+            </div>
+            <div class="flex-auto">
+                <label for="withoutgrouping" class="font-bold block mb-2"> out of </label>
+                <InputNumber v-model="valueB"  disabled/>
+            </div>
+            <div class="flex-auto">
+                <label for="minmaxfraction" class="font-bold block mb-2"> And value B is </label>
+                <InputNumber v-model="valueC" :maxFractionDigits="2" @input="calculateProportion"/>
+            </div>
+            <div class="flex-auto">
+                <label for="minmax" class="font-bold block mb-2"> it results in: </label>
+                <InputNumber v-model="valueX"  disabled/>
+            </div>
+            
+        </div>
     </template>
 
       </Card>
-    </div>
   </template>
   
   <style scoped>
