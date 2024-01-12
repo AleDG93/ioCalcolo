@@ -7,15 +7,26 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Average: typeof import('./src/components/Average.vue')['default']
+    Calculator: typeof import('./src/components/Calculator.vue')['default']
+    CompositInterest: typeof import('./src/components/CompositInterest.vue')['default']
+    copy: typeof import('./src/components/Explanation copy.vue')['default']
+    DatesDifference: typeof import('./src/components/DatesDifference.vue')['default']
+    DocumentReader: typeof import('./src/components/DocumentReader.vue')['default']
+    Example: typeof import('./src/components/Example.vue')['default']
+    ExapandableText: typeof import('./src/components/ExapandableText.vue')['default']
+    Explanation: typeof import('./src/components/Explanation.vue')['default']
+    Explanations: typeof import('./src/components/Explanations.vue')['default']
     Finance: typeof import('./src/components/Finance.vue')['default']
+    FiscalCode: typeof import('./src/components/FiscalCode.vue')['default']
+    Geometry: typeof import('./src/components/Geometry.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     HomePage: typeof import('./src/pages/HomePage.vue')['default']
     Proportion: typeof import('./src/components/Proportion.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Test: typeof import('./src/components/Test.vue')['default']
-    Widget: typeof import('./src/components/Widget.vue')['default']
+    UnitMeasures: typeof import('./src/components/UnitMeasures.vue')['default']
     WidgetHeart: typeof import('./src/components/WidgetHeart.vue')['default']
   }
 }

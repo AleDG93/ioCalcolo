@@ -1,5 +1,3 @@
-<!-- src/components/ProportionCalculator.vue -->
-
 <script setup lang="ts">
 
 import InputNumber from 'primevue/inputnumber';
@@ -28,12 +26,23 @@ watch([valueA, valueC], calculateProportion)
             Enter three values and leave the fourth empty to calculate the unknown proportion (X).
         </template>
         <template #content>
-          <h4 class="p-mb-3">Explanation:</h4>
+          <!-- <h4 class="p-mb-3">Explanation:</h4>
           <p>
             In arithmetic proportions, the product of the means (ad) is equal to the product of the extremes (bc).
             This calculator helps you find the unknown proportion (X) based on three known values.
-          </p>
-          <div class="flex flex-wrap gap-2 p-fluid">
+          </p> -->
+          <ExapandableText title="Spiegazione">
+            <template #content>
+            In arithmetic proportions, the product of the means (ad) is equal to the product of the extremes (bc).
+            This calculator helps you find the unknown proportion (X) based on three known values.
+            </template>
+          </ExapandableText>
+          <ExapandableText title="Esempio">
+            <template #content>
+              Esempio: se 4 é il 40% del totale, questo totale é 10.
+            </template>
+          </ExapandableText>
+          <div class="flex flex-wrap gap-2 p-fluid mt-4">
             <div class="flex-auto">
                 <label for="integeronly" class="font-bold block mb-2"> If value A is </label>
                 <InputNumber v-model="valueA" @input="calculateProportion"/>

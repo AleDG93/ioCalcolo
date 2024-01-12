@@ -89,6 +89,10 @@ button:focus-visible {
   box-shadow: none;
 }
 
+.p-menubar-root-list {
+  border-radius: 30px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
