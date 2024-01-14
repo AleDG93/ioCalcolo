@@ -15,7 +15,7 @@ function getComponent(name: string) {
       <component v-for="name in widgets.get()" :is="getComponent(name)" :key="name" class="mb-3"></component>
     </div>
     <div v-else>
-        Add widgets to visualize them in the homepage
+        Seleziona il cuore per aggiungere i Widget e creare la tua Homepage personalizzata
     </div>
   </template>
   

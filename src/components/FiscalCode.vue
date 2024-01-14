@@ -9,6 +9,7 @@ import Card from 'primevue/card';
 import Calendar from "primevue/calendar";
 import Dropdown, { DropdownFilterEvent } from "primevue/dropdown";
 import Button from "primevue/button";
+import AutoComplete from "primevue/autocomplete";
 const comuniOptions = ref<ComuniSelectOptions[]>([]);
 const resCodiceFiscale = ref("")
 
@@ -27,19 +28,13 @@ const genderOptions = [
         { label: 'M', value: 'M' },
         { label: 'F', value: 'F' }
       ];
-const filterText = ref("");
 const filteredComuni = ref<ComuniSelectOptions[]>(comuniOptions.value.slice(0, 20));
 const calculateFiscalCode = () => {
-  const comuneFinder = new FiscalCodeCalculator(firstName.value, lastName.value, birthDate.value, genre.value,  selectedComune.value || "");
+  const selected = (selectedComune.value as any).value
+  const comuneFinder = new FiscalCodeCalculator(firstName.value, lastName.value, birthDate.value, genre.value,  selected || "");
     resCodiceFiscale.value = comuneFinder.getFiscalCode();
 }
 
-const updateFilterText = (inp: DropdownFilterEvent) => {
-
-  filterText.value = inp.value;
-  selectedComune.value = inp.value;
-  debouncedFilter(); // Trigger the debounced filter function
-}
 const debouncedFilter = debounce(function() {
     // Debounced filter function to reduce the frequency of updates
     filterComuni();
@@ -47,18 +42,18 @@ const debouncedFilter = debounce(function() {
 const filterComuni = () => {
   // Apply your custom filtering logic
   filteredComuni.value = comuniOptions.value.filter((comune: ComuniSelectOptions) =>
-    comune.label.toLowerCase().includes(filterText.value.toLowerCase())
+    comune.label.toLowerCase().includes((selectedComune.value || "").toLowerCase())
   );
 }
 </script>
 <template>
     <Card class="p-card p-shadow-5">
       <template #title>
-        Fiscal Code Calculator
+        Calcolatore Codice Fiscale
         <WidgetHeart widget="fiscalCode"/>
       </template>
       <template #subtitle>
-        Please enter the following details to calculate the fiscal code.
+        Inserisci le informazioni necessarie per calcolare il codice fiscale.
       </template>
       <template #content>
         <form @submit.prevent="calculateFiscalCode">
@@ -77,18 +72,20 @@ const filterComuni = () => {
       </div>
       <div class="flex-auto">
         <label for="birthPlace" class="font-bold block mb-2">Luogo di nascita</label>
-        <Dropdown
-          v-model="selectedComune"
-          :options="filteredComuni"
-          optionLabel="label"
-          optionValue="value"
-          filter
-          :virtualScroll="true"
-          :virtualItemSize="30"
-          @filter="updateFilterText"
-          required
-          class="dropdown-custom" 
-        />
+        <AutoComplete
+  v-model="selectedComune"
+  :suggestions="filteredComuni"
+  field="label"
+  placeholder="Seleziona un comune"
+  :virtualScroll="true"
+  :virtualScrollerOptions="{
+    numToleratedItems: 30,
+    items:comuniOptions
+  }"
+  @input="debouncedFilter"
+  required
+  class="autocomplete-custom"
+/>
       </div>
       <div class="flex-auto">
         <label for="genre" class="font-bold block mb-2">Genere</label>
@@ -100,7 +97,7 @@ const filterComuni = () => {
   <div class="flex flex-wrap mt-4">
       <div class="flex-auto">
         <label class="mb-2">Codice fiscale:</label>
-        <h4>{{ resCodiceFiscale }}</h4>
+        <h4>{{ resCodiceFiscale || "..." }}</h4>
       </div>
       </div>
       </template>
@@ -111,12 +108,18 @@ const filterComuni = () => {
 /* Ensure consistent height for InputText, Dropdown, and Calendar components */
 .flex-auto .p-inputtext,
 .flex-auto .p-dropdown,
+.flex-auto .p-autocomplete,
 .flex-auto .p-calendar {
   height: 2.5rem; /* Adjust the height as needed */
 }
 
 /* Optionally, you can style the dropdown items for consistent appearance */
 .dropdown-custom .p-dropdown-item {
+  line-height: 2rem; /* Adjust the line height as needed */
+}
+
+.p-autocomplete-custom .p-autocomplete-input .p-inputtext .p-component {
+  
   line-height: 2rem; /* Adjust the line height as needed */
 }
 
