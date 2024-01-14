@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import {FiscalCodeCalculator} from "@/models/fiscalCode";
 import { ComuniManager, ComuniSelectOptions } from "@/models/comuniManger"; // Adjust the path
-
 import { debounce } from "lodash"; // Import lodash for debouncing
-
 import InputText from 'primevue/inputtext';
 import Card from 'primevue/card';
 import Calendar from "primevue/calendar";
-import Dropdown, { DropdownFilterEvent } from "primevue/dropdown";
+import Dropdown from "primevue/dropdown";
 import Button from "primevue/button";
 import AutoComplete from "primevue/autocomplete";
 const comuniOptions = ref<ComuniSelectOptions[]>([]);

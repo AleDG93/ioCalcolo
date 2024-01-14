@@ -1,5 +1,3 @@
-import { ComuniManager } from "./comuniManger";
-
 // Struttura di base per il calcolo del Code fiscale
 export class FiscalCodeCalculator {
     private firstname: string;
