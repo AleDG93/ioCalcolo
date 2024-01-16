@@ -10,12 +10,15 @@ import 'primeflex/primeflex.css'
 import router from "./router";
 import { RouterLink, RouterView } from 'vue-router';
 import { createPinia } from 'pinia';
+import ToastService from 'primevue/toastservice';
 
 const app = createApp(App);
 app.use(PrimeVue);
 app.use(i18n)
 app.use(router);
-app.use(createPinia())
+app.use(createPinia());
+app.use(ToastService);
+
 // register router-link so Primevue doesn't complain
 app.component('router-link', RouterLink);
 app.component('router-view', RouterView);

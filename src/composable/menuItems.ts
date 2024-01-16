@@ -17,33 +17,38 @@ export const items = [
     //         }
     //     ]
     // },
-    // {
-    //     label: 'Matematica',
-    //     icon: 'pi pi-chart-line',
-    //     hasSubmenu: true,
-    //     items: [
-    //         {
-    //             label: 'Calcolatrice',
-    //             icon: 'pi pi-calculator',
-    //             route: "/matematica/calcolatrice"
-    //         },
-    //         {
-    //             label: 'Proporzioni',
-    //             icon: 'pi pi-percentage',
-    //             route: "/matematica/proporzioni"
-    //         },
-    //         {
-    //             label: 'Media Ponderata',
-    //             icon: 'pi pi-sitemap',
-    //             route: "/matematica/media-ponderata"
-    //         },
-    //         {
-    //             label: 'Area e Volume',
-    //             icon: 'pi pi-table',
-    //             route: "/matematica/area-volume"
-    //         }
-    //     ]
-    // },
+    {
+        label: 'Matematica',
+        icon: 'pi pi-chart-line',
+        hasSubmenu: true,
+        items: [
+            // {
+            //     label: 'Calcolatrice',
+            //     icon: 'pi pi-calculator',
+            //     route: "/matematica/calcolatrice"
+            // },
+            {
+                label: 'Proporzioni',
+                icon: 'pi pi-compass',
+                route: "/matematica/proporzioni"
+            },
+            {
+                label: 'Percentuale',
+                icon: 'pi pi-percentage',
+                route: "/matematica/percentuale"
+            },
+            // {
+            //     label: 'Media Ponderata',
+            //     icon: 'pi pi-sitemap',
+            //     route: "/matematica/media-ponderata"
+            // },
+            // {
+            //     label: 'Area e Volume',
+            //     icon: 'pi pi-table',
+            //     route: "/matematica/area-volume"
+            // }
+        ]
+    },
     // {
     //     label: 'Date',
     //     icon: 'pi pi-calendar',

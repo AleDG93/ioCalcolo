@@ -19,8 +19,16 @@ watch([valueA, valueC], calculateProportion)
 <template>
       <Card class="p-card p-shadow-5">
         <template #title>
-            Arithmetic Proportions Calculator
-            <WidgetHeart widget="proportion"/>
+        <div class="grid">
+          <div class="col-12 lg:col-11 md:col-11">
+            <!-- Content for medium (md) and small (sm) screens, and large (md) screens with a width of 9 columns -->
+            Calcolatore Codice Fiscale
+          </div>
+          <div class="col-12 lg:col-1 md:col-1">
+            <!-- WidgetHeart component for medium (md) and small (sm) screens, and large (md) screens with a width of 3 columns -->
+            <WidgetHeart widget="fiscalCode"/>
+          </div>
+        </div>
         </template>
         <template #subtitle>
             Enter three values and leave the fourth empty to calculate the unknown proportion (X).

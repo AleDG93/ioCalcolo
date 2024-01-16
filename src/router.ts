@@ -10,6 +10,7 @@ import DatesDifference from './components/DatesDifference.vue';
 import UnitMeasures from './components/UnitMeasures.vue';
 import DocumentReader from './components/DocumentReader.vue';
 import CompositInterest from './components/CompositInterest.vue';
+import Percentages from "./components/Percentages.vue";
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -23,6 +24,10 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/matematica/proporzioni',
         component: Proportion,
+    },
+    {
+        path: '/matematica/percentuale',
+        component: Percentages,
     },
     {
         path: '/matematica/calcolatrice',

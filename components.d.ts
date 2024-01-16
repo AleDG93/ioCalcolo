@@ -18,6 +18,7 @@ declare module 'vue' {
     Geometry: typeof import('./src/components/Geometry.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     HomePage: typeof import('./src/pages/HomePage.vue')['default']
+    Percentages: typeof import('./src/components/Percentages.vue')['default']
     Proportion: typeof import('./src/components/Proportion.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
