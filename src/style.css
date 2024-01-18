@@ -89,8 +89,9 @@ button:focus-visible {
   box-shadow: none;
 }
 
-.p-menubar-root-list {
-  border-radius: 30px;
+.p-menubar-root-list,
+.p-menubar-root-list:hover {
+  border-radius: 15px;
 }
 
 @media (prefers-color-scheme: light) {

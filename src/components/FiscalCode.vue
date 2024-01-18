@@ -47,8 +47,17 @@ const filterComuni = () => {
 <template>
     <Card class="p-card p-shadow-5">
       <template #title>
-        Calcolatore Codice Fiscale
-        <WidgetHeart widget="fiscalCode"/>
+        <div class="grid">
+          <div class="col-12 lg:col-11 md:col-11">
+            <!-- Content for medium (md) and small (sm) screens, and large (md) screens with a width of 9 columns -->
+            Calcolatore Codice Fiscale
+          </div>
+          <div class="col-12 lg:col-1 md:col-1">
+            <!-- WidgetHeart component for medium (md) and small (sm) screens, and large (md) screens with a width of 3 columns -->
+            <WidgetHeart widget="fiscalCode"/>
+          </div>
+        </div>
+
       </template>
       <template #subtitle>
         Inserisci le informazioni necessarie per calcolare il codice fiscale.
@@ -71,19 +80,19 @@ const filterComuni = () => {
       <div class="flex-auto">
         <label for="birthPlace" class="font-bold block mb-2">Luogo di nascita</label>
         <AutoComplete
-  v-model="selectedComune"
-  :suggestions="filteredComuni"
-  field="label"
-  placeholder="Seleziona un comune"
-  :virtualScroll="true"
-  :virtualScrollerOptions="{
-    numToleratedItems: 30,
-    items:comuniOptions
-  }"
-  @input="debouncedFilter"
-  required
-  class="autocomplete-custom"
-/>
+        v-model="selectedComune"
+        :suggestions="filteredComuni"
+        field="label"
+        placeholder="Seleziona un comune"
+        :virtualScroll="true"
+        :virtualScrollerOptions="{
+          numToleratedItems: 30,
+          items:comuniOptions
+        }"
+        @input="debouncedFilter"
+        required
+        class="autocomplete-custom"
+      />
       </div>
       <div class="flex-auto">
         <label for="genre" class="font-bold block mb-2">Genere</label>

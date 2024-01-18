@@ -1,15 +1,16 @@
 
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
-import Proportion from '@/components/Proportion.vue';
+import Proportion from '@/components/ReversePercentage.vue';
 import HomePage from '@/pages/HomePage.vue';
 import Calculator from './components/Calculator.vue';
 import Average from './components/Average.vue';
-import FiscalCode from './components/FiscalCode.vue';
+import FiscalCodePage from './pages/FiscalCodePage.vue';
 import Geometry from './components/Geometry.vue';
-import DatesDifference from './components/DatesDifference.vue';
 import UnitMeasures from './components/UnitMeasures.vue';
 import DocumentReader from './components/DocumentReader.vue';
 import CompositInterest from './components/CompositInterest.vue';
+import PercentagePage from "./pages/PercentagePage.vue";
+import DatePage from './pages/DatePage.vue';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -25,6 +26,10 @@ const routes: Array<RouteRecordRaw> = [
         component: Proportion,
     },
     {
+        path: '/matematica/percentuale',
+        component: PercentagePage,
+    },
+    {
         path: '/matematica/calcolatrice',
         component: Calculator,
     },
@@ -38,11 +43,11 @@ const routes: Array<RouteRecordRaw> = [
     },
     {
         path: '/date/calcolo-date',
-        component: DatesDifference,
+        component: DatePage,
     },
     {
         path: '/documenti/codice-fiscale',
-        component: FiscalCode,
+        component: FiscalCodePage,
     },
     {
         path: '/convertitore/unita-di-misura',

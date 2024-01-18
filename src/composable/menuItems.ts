@@ -17,45 +17,44 @@ export const items = [
     //         }
     //     ]
     // },
-    // {
-    //     label: 'Matematica',
-    //     icon: 'pi pi-chart-line',
-    //     hasSubmenu: true,
-    //     items: [
-    //         {
-    //             label: 'Calcolatrice',
-    //             icon: 'pi pi-calculator',
-    //             route: "/matematica/calcolatrice"
-    //         },
-    //         {
-    //             label: 'Proporzioni',
-    //             icon: 'pi pi-percentage',
-    //             route: "/matematica/proporzioni"
-    //         },
-    //         {
-    //             label: 'Media Ponderata',
-    //             icon: 'pi pi-sitemap',
-    //             route: "/matematica/media-ponderata"
-    //         },
-    //         {
-    //             label: 'Area e Volume',
-    //             icon: 'pi pi-table',
-    //             route: "/matematica/area-volume"
-    //         }
-    //     ]
-    // },
-    // {
-    //     label: 'Date',
-    //     icon: 'pi pi-calendar',
-    //     hasSubmenu: true,
-    //     items: [
-    //         {
-    //             label: 'Calcolo date',
-    //             icon: 'pi pi-calendar-times',
-    //             route: "/date/calcolo-date"
-    //         }
-    //     ]
-    // },
+    {
+        label: 'Matematica',
+        icon: 'pi pi-chart-line',
+        hasSubmenu: true,
+        items: [
+            // {
+            //     label: 'Calcolatrice',
+            //     icon: 'pi pi-calculator',
+            //     route: "/matematica/calcolatrice"
+            // },
+            // {
+            //     label: 'Proporzioni',
+            //     icon: 'pi pi-compass',
+            //     route: "/matematica/proporzioni"
+            // },
+            {
+                label: 'Percentuali',
+                icon: 'pi pi-percentage',
+                route: "/matematica/percentuale"
+            },
+            // {
+            //     label: 'Media Ponderata',
+            //     icon: 'pi pi-sitemap',
+            //     route: "/matematica/media-ponderata"
+            // },
+            // {
+            //     label: 'Area e Volume',
+            //     icon: 'pi pi-table',
+            //     route: "/matematica/area-volume"
+            // }
+        ]
+    },
+    {
+        label: 'Date',
+        icon: 'pi pi-calendar',
+        hasSubmenu: false,
+        route: "/date/calcolo-date"
+    },
     {
         label: 'Codice Fiscale',
         icon: 'pi pi-id-card',
