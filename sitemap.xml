@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://iocalcolo.it/</loc>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://iocalcolo.it/matematica/percentuale</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://iocalcolo.it/matematica/media-ponderata</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://iocalcolo.it/date/calcolo-date</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://iocalcolo.it/documenti/codice-fiscale</loc>
+        <priority>0.80</priority>
+    </url>
+    <!-- Add more URLs as needed  
+        <url>
+        <loc>https://iocalcolo.it/convertitore/contatore-parole-caratteri</loc>
+        <priority>0.80</priority>
+    </url>
+    -->
+</urlset>

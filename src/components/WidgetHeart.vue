@@ -10,10 +10,10 @@ const widgets = useWidgetStore()
 const props = defineProps<{ widget: string }>();
 const toast = useToast();
 const showInfo = (content: string) => {
-    toast.add({ severity: 'info', summary: 'Informazione', detail: content, life: 3000 });
+    toast.add({ severity: 'info', summary: 'Informazione', detail: content, life: 1500 });
 };
 const showSuccess = (content: string) => {
-    toast.add({ severity: 'success', summary: 'Complimenti', detail: content, life: 3000 });
+    toast.add({ severity: 'success', summary: 'Complimenti', detail: content, life: 1500 });
 };
 const selected = ref(false);
 const handleToggle = () => {

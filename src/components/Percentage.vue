@@ -2,7 +2,6 @@
 
 import InputText from 'primevue/inputtext';
 import Card from 'primevue/card';
-
 const valueA = ref(0);
 const valueB = ref(0);
 const valueX = ref(0);
@@ -21,16 +20,16 @@ watch([valueA, valueB], calculateProportion)
         <div class="grid">
           <div class="col-12 lg:col-11 md:col-11">
             <!-- Content for medium (md) and small (sm) screens, and large (md) screens with a width of 9 columns -->
-            Calcolo delle Percentuali
+            Calcolo delle Parti Percentuali
           </div>
           <div class="col-12 lg:col-1 md:col-1">
             <!-- WidgetHeart component for medium (md) and small (sm) screens, and large (md) screens with a width of 3 columns -->
-            <WidgetHeart widget="percentages"/>
+            <WidgetHeart widget="percentage"/>
           </div>
         </div>
         </template>
         <template #subtitle>
-            Calcola la percentuale di una porzione rispetto al totale.
+            Calcola il valore di una porzione che rappresneta una data percentuale rispetto al totale.
         </template>
         <template #content>
           <ExapandableText title="Spiegazione">
@@ -42,16 +41,16 @@ watch([valueA, valueB], calculateProportion)
             <template #content>
               <p>La formula di calcolo percentuale è:</p>
               <p>
-                Percentuale = <span class="math-formula">(Parte / Totale) * 100</span>
+                Percentuale = <span class="math-formula">(Parte * Totale) / 100</span>
               </p>
             </template>
           </ExapandableText>
           <ExapandableText title="Esempio">
             <template #content>
-              <p>Supponiamo di avere una classe di 30 studenti, e 15 di loro hanno ottenuto un voto A.</p>
+              <p>Supponiamo di avere una classe di 50 studenti, e il 30 % di loro hanno ottenuto un voto A.</p>
               <p>La percentuale di studenti che hanno ottenuto un voto A rispetto al totale è:</p>              
               <p>
-                Percentuale di A = <strong>50 %</strong>
+                Parte = <span class="math-formula">(30 * 50) / 100</span> = <strong>15</strong>
               </p>
             </template>
           </ExapandableText>

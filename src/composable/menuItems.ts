@@ -27,13 +27,13 @@ export const items = [
             //     icon: 'pi pi-calculator',
             //     route: "/matematica/calcolatrice"
             // },
+            // {
+            //     label: 'Proporzioni',
+            //     icon: 'pi pi-compass',
+            //     route: "/matematica/proporzioni"
+            // },
             {
-                label: 'Proporzioni',
-                icon: 'pi pi-compass',
-                route: "/matematica/proporzioni"
-            },
-            {
-                label: 'Percentuale',
+                label: 'Percentuali',
                 icon: 'pi pi-percentage',
                 route: "/matematica/percentuale"
             },
@@ -49,18 +49,12 @@ export const items = [
             // }
         ]
     },
-    // {
-    //     label: 'Date',
-    //     icon: 'pi pi-calendar',
-    //     hasSubmenu: true,
-    //     items: [
-    //         {
-    //             label: 'Calcolo date',
-    //             icon: 'pi pi-calendar-times',
-    //             route: "/date/calcolo-date"
-    //         }
-    //     ]
-    // },
+    {
+        label: 'Date',
+        icon: 'pi pi-calendar',
+        hasSubmenu: false,
+        route: "/date/calcolo-date"
+    },
     {
         label: 'Codice Fiscale',
         icon: 'pi pi-id-card',
