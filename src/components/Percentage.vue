@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
-import InputText from 'primevue/inputtext';
 import Card from 'primevue/card';
+import { InputType } from './myInput';
 const valueA = ref(0);
 const valueB = ref(0);
 const valueX = ref(0);
@@ -55,19 +55,13 @@ watch([valueA, valueB], calculateProportion)
             </template>
           </ExapandableText>
           <div class="grid mt-4">
-            <div class="col-2 lg:col-1">
-              <div class="mt-2 text-center">Il</div>
-            </div>
-            <div class="col-2 lg:col-2 dim-reduction-plus">              
-              <InputText class="dim-reduction-plus" v-model="valueA" type="number"/>
+            <div class="col-4  md:col-3 lg:col-1">          
+              <MyInput label="Il" v-model="valueA" :type="InputType.NUMBER" size="xs" />    
               </div>    
-            <div class="col-3 lg:col-1">
-              <div class="mt-2 text-center">% di</div>
+            <div class="col-8  md:col-3 lg:col-2">
+              <MyInput label="% di" v-model="valueB" :type="InputType.NUMBER" size="s" />    
             </div>
-            <div class="col-3 lg:col-2 dim-reduction">
-               <InputText class="dim-reduction" v-model="valueB" type="number"/>
-            </div>
-            <div class="col-3 lg:col-1">
+            <div class="col-2  md:col-3 lg:col-1">
               <div class="mt-2 text-center">è 
                 <strong class="ml-2">{{  valueX }}</strong>
               </div>

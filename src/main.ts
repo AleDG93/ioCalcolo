@@ -11,7 +11,7 @@ import router from "./router";
 import { RouterLink, RouterView } from 'vue-router';
 import { createPinia } from 'pinia';
 import ToastService from 'primevue/toastservice';
-import {createMetaManager} from 'vue-meta'
+import { createMetaManager } from 'vue-meta'
 
 const app = createApp(App);
 app.use(PrimeVue);

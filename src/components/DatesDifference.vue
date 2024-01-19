@@ -68,6 +68,7 @@ watch([valueC, extraDays], () => {
         <div class="grid">
             <div class="col-12 md:col-6 lg:col-3">
                 <label for="valueA" class="font-bold block mb-2">Se aggiung +/- giorni pari a:</label>
+                <!-- @vue-ignore -->              
                 <InputText class="dim-reduction-plus" v-model="extraDays" type="number"/>
             </div>
             <div class="col-12 md:col-6 lg:col-3">

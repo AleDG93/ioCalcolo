@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
-import InputText from 'primevue/inputtext';
 import Card from 'primevue/card';
+import { InputType } from './myInput';
 
 const valueA = ref(0);
 const valueB = ref(0);
@@ -30,12 +30,12 @@ watch([valueA, valueB], calculateProportion)
         </div>
         </template>
         <template #subtitle>
-            Calcola il totale a partire da una porzione di esso.
+            Calcola il totale a partire da una porzione di esso, data la percentuale di riduzione.
         </template>
         <template #content>
           <ExapandableText title="Spiegazione">
             <template #content>
-              Il calcolo inverso della percentuale è per risalire al totale data una parte in centesimi e la percentuale che tale parte rappresenta rispetto al totale.
+              Il calcolo inverso della percentuale è per risalire al totale data una porzione del totale e la percentuale mancante da esso.
             </template>
           </ExapandableText>
           <ExapandableText title="Formula">
@@ -56,20 +56,14 @@ watch([valueA, valueB], calculateProportion)
             </template>
           </ExapandableText>
           <div class="grid mt-4">
-            <div class="col-6 md:col-1 lg:col-1">
-              <div class="mt-2 text-center">Se</div>
-            </div>
-            <div class="col-6 md:col-2 lg:col-2 dim-reduction">              
-              <InputText class="dim-reduction" v-model="valueA" type="number"/>
+            <div class="col-12 md:col-6 lg:col-2">              
+              <MyInput label="Se ottengo" v-model="valueA" :type="InputType.NUMBER" size="s" />    
               </div>    
-            <div class="col-6 md:col-3 lg:col-2">
-              <div class="mt-2 text-center">corrisponde al</div>
-            </div>
-            <div class="col-6 md:col-2 lg:col-2 dim-reduction-plus">
-               <InputText class="dim-reduction-plus" v-model="valueB" type="number"/>
+            <div class="col-12 md:col-6 lg:col-3">
+              <MyInput label="una volta ridotto del" v-model="valueB" :type="InputType.NUMBER" size="s" />    
             </div>
             <div class="col-12 md:col-4 lg:col-3">
-              <div class="mt-2 text-center"> % del totale, il totale è: 
+              <div class="mt-2"> % , il totale è: 
                 <strong class="ml-2">{{  valueX }}</strong>
               </div>
             </div>
